@@ -203,6 +203,7 @@ section {
     width: 30%;
     display: flex;
     flex-direction: column;
+    gap: 30px;
 }
 
 /* Pour la section Madrid, la nouvelle structure utilise directement .madrid comme conteneur */
@@ -236,6 +237,7 @@ section {
     /* Le conteneur .pop contient directement les liens <a> */
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     gap: 10px;
 }
 
@@ -248,7 +250,7 @@ section {
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
-    padding: 5px 5px;
+    padding: 3px 5px;
 }
 
 .pop a {
@@ -266,7 +268,7 @@ section {
 
 .pop article img {
     width: 100px;
-    height: 195px;
+    height: 170px;
     object-fit: cover;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -279,6 +281,7 @@ section {
 .acc-madrid article .text {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     padding: 10px 20px;
 }
 
@@ -286,13 +289,14 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 0 20px;
+    padding: 10px  20px;
 }
 
 .madrid-load {
 font-size: 18px;
 font-weight: 700;
 }
+
 /* Le lien "Load more" devient directement cliquable */
 .madrid-load:hover {
     color: #f60303;
@@ -476,7 +480,7 @@ button:hover{
 ========================================= */
 
 /* TABLETTES : Largeur entre 768px et 1024px */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1040px) {
     .two-sections {
         display: flex;
         flex-direction: column;

@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 180px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul a {
+    color: black;
+    text-decoration: none;
+    padding-top: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu ul a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: #f60303;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.menu ul a:hover::before {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.menu ul a:hover {
+    color: #f60303;
+}
+
+.separation {
+    display: none;
+}
+
+i {
+    color: #f60303;
+}
+a {
+    text-decoration: none;
+    color:#000
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 30px 0;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+section {
+    margin-bottom: 20px;
+}
+
+.form {
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.form * {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+
+.form label i {
+    border: 1px solid #f60303;
+    background-color: #f60303;
+    color: beige;
+    padding: 10px 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.form .search-input {
+    border: 1px solid #c1c1c1;
+    padding: 10px 15px;
+}
+
+.form .search-input:hover {
+    cursor: none;
+}
+
+.form .search-btn-desc {
+    border: 1px solid #f60303;
+    background-color: #f60303;
+    color: beige;
+    padding: 10px 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.form .search-btn-mobile {
+    display: none;
+}
+
+/* FILTRE */
+.filtre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.filtres-button a {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #f60303;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.filtres-button a:hover,
+.filtres-button a:hover i {
+    color: #fff;
+    border: 1px solid #f60303;
+    background-color: #f60303;
+    cursor: pointer;
+}
+
+/* SECTION ACCOMMODATIONS & POPULAIRES */
+.two-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.acc-madrid {
+    background-color: #eaeaea;
+    border-radius: 15px;
+    padding: 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.acc-pop {
+    background-color: #eaeaea;
+    border-radius: 15px;
+    padding: 30px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pour la section Madrid, la nouvelle structure utilise directement .madrid comme conteneur */
+.madrid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+}
+
+.madrid article {
+    position: relative;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+}
+
+.madrid a {
+    text-decoration: none;
+    flex: 1 0 27%;
+    color: #000;
+}
+
+/* Section Populaires : suppression du sélecteur inutile */
+.pop {
+    /* Le conteneur .pop contient directement les liens <a> */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pop article {
+    position: relative;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 5px;
+}
+
+.pop a {
+    text-decoration: none;
+    flex: 1 0 27%;
+    color: #000;
+}
+
+.madrid article img {
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.pop article img {
+    width: 100px;
+    height: 195px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.pop article .img {
+    width: 100px;
+}
+
+.acc-madrid article .text {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+.pop article .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+
+.madrid-load {
+font-size: 18px;
+font-weight: 700;
+}
+/* Le lien "Load more" devient directement cliquable */
+.madrid-load:hover {
+    color: #f60303;
+    cursor: pointer;
+}
+
+.acc-madrid .rating {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+.acc-pop .rating {
+    display: flex;
+    flex-direction: row;
+}
+
+.rating i {
+    font-size: 18px;
+}
+
+.rating .fa-regular {
+    color: gray;
+    /* Étoile vide */
+}
+
+.acc-madrid .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f60303;
+    /* Couleur rouge vif */
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.acc-pop .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #f60303;
+    /* Couleur rouge vif */
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ACTIVITIES */
+.activitie {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.activitie a {
+    text-decoration: none;
+    color: #000;
+}
+
+.activitie article {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.activitie img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 330px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.activitie h3 {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+.madrid article:hover,
+.pop article:hover,
+.activitie article:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.madrid article .badge,
+.pop article .badge,
+.activitie article .badge {
+    position: absolute;
+    z-index: 10;
+}
+
+.madrid article:hover .badge,
+.pop article:hover .badge,
+.activitie article:hover .badge {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.madrid article:hover img,
+.pop article:hover img,
+.activitie article:hover img {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.footer {
+    background-color: #eaeaea;
+    border-radius: 10px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    text-align: left;
+    width: 100%;
+}
+
+.footer div {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 8px;
+}
+
+.footer h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+    color: #f60303;
+    cursor: pointer;
+}
+
+footer p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+footer p:hover {
+    cursor: none;
+}
+button:hover{
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE CSS (ajouté sans toucher le CSS existant)
+========================================= */
+
+/* TABLETTES : Largeur entre 768px et 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .two-sections {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .acc-madrid,
+    .acc-pop {
+        width: 100%;
+    }
+
+    .madrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .madrid a {
+        flex: 1 0 27%;
+        margin-bottom: 15px;
+    }
+
+    .pop {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pop article {
+        width: 100%;
+        margin-bottom: 15px;
+        flex-direction: row;
+    }
+
+    .pop article img {
+        width: 300px;
+        height: 195px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .pop article .img {
+        width: 300px;
+    }
+
+    .pop article .text {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+
+    .activitie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .activitie a {
+        width: calc((100% - 20px) / 2);
+    }
+
+    .activitie article {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
+
+    .activitie img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .activitie h3 {
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .footer{
+        width: 90%;
+    }
+}
+
+/* MOBILES : 320px - 767px */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    body {
+        box-sizing: border-box;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+        width: 100%;
+    }
+
+    .separation {
+        display: block;
+        border: 0.5px solid #f1f1f1;
+        width: 300px;
+        margin: 10px 0;
+    }
+
+    .form .search-btn-mobile {
+        display: block;
+        border: 1px solid #f60303;
+        background-color: #f60303;
+        color: beige;
+        padding: 10px 15px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .form .search-btn-desc {
+        display: none;
+    }
+
+    .search-btn-mobile i {
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .filtre {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .filtre h2 {
+        flex: 0 0 10%;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .filtres-button {
+        display: contents;
+    }
+
+    .filtres-button a {
+        flex: 0 0 33%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #000;
+        text-decoration: none;
+        border: 1px solid #f60303;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .filtres-button a i {
+        font-size: 15px;
+    }
+
+    .two-sections {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 85%;
+        gap: 20px;
+    }
+
+    /* Pour la section Madrid : on affiche 1 article par ligne en mobile */
+    .madrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .madrid article {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .acc-pop,
+    .acc-madrid {
+        width: 100%;
+    }
+
+    /* Pour la section Pop, occuper toute la largeur */
+    .pop {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .pop article {
+        width: 100%;
+        margin-bottom: 15px;
+        flex-direction: row;
+    }
+
+    .pop article img {
+        width: 100px;
+        height: 195px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .pop article .img {
+        width: 100px;
+    }
+
+    .pop article .text {
+        display: flex;
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+
+    .activitie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    .activitie article {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
+
+    .activitie img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    .activitie h3 {
+        text-align: center;
+        padding: 15px 10px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+}

@@ -10,8 +10,6 @@ body {
     width: 100%;
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
@@ -26,7 +24,7 @@ header img {
 
 .menu ul {
     display: flex;
-    gap: 15px;
+    gap: 50px;
     list-style: none;
     padding: 0;
 }
@@ -70,7 +68,7 @@ i {
 }
 a {
     text-decoration: none;
-    color:#000
+    color: #000;
 }
 
 h1 {
@@ -99,8 +97,7 @@ h3 {
 
 main {
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    /* plus besoin de display:flex ici, si on veut rester simple */
 }
 
 header,
@@ -206,7 +203,7 @@ section {
     gap: 30px;
 }
 
-/* Pour la section Madrid, la nouvelle structure utilise directement .madrid comme conteneur */
+/* Pour la section Madrid */
 .madrid {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +216,6 @@ section {
     background-color: white;
     border-radius: 18px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -232,9 +228,8 @@ section {
     color: #000;
 }
 
-/* Section Populaires : suppression du sélecteur inutile */
+/* Section Populaires */
 .pop {
-    /* Le conteneur .pop contient directement les liens <a> */
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -246,7 +241,6 @@ section {
     background-color: white;
     border-radius: 18px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
@@ -293,11 +287,10 @@ section {
 }
 
 .madrid-load {
-font-size: 18px;
-font-weight: 700;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-/* Le lien "Load more" devient directement cliquable */
 .madrid-load:hover {
     color: #f60303;
     cursor: pointer;
@@ -320,7 +313,6 @@ font-weight: 700;
 
 .rating .fa-regular {
     color: gray;
-    /* Étoile vide */
 }
 
 .acc-madrid .badge {
@@ -328,7 +320,6 @@ font-weight: 700;
     top: 10px;
     right: 10px;
     background-color: #f60303;
-    /* Couleur rouge vif */
     color: white;
     padding: 5px 10px;
     font-size: 12px;
@@ -341,7 +332,6 @@ font-weight: 700;
     top: 10px;
     left: 10px;
     background-color: #f60303;
-    /* Couleur rouge vif */
     color: white;
     padding: 5px 10px;
     font-size: 12px;
@@ -352,14 +342,15 @@ font-weight: 700;
 /* ACTIVITIES */
 .activitie {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 10px;  
     padding: 0 10px;
 }
 
 .activitie a {
     text-decoration: none;
     color: #000;
+    flex :0 0 calc(25% - 10px);
 }
 
 .activitie article {
@@ -371,14 +362,9 @@ font-weight: 700;
 .activitie img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    width: 330px;
-    height: 400px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
-}
-
-.activitie h3 {
-    text-align: center;
-    padding: 15px 10px;
 }
 
 .madrid article:hover,
@@ -470,10 +456,9 @@ footer p {
 footer p:hover {
     cursor: none;
 }
-button:hover{
+button:hover {
     cursor: pointer;
 }
-
 
 /* =========================================
    RESPONSIVE CSS (ajouté sans toucher le CSS existant)
@@ -556,13 +541,8 @@ button:hover{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         width: 100%;
-        height: 400px;
+        height: 400px; /* on pourrait aussi mettre "auto" selon le besoin */
         object-fit: cover;
-    }
-
-    .activitie h3 {
-        text-align: center;
-        padding: 15px 10px;
     }
 
     footer {
@@ -668,7 +648,6 @@ button:hover{
         gap: 20px;
     }
 
-    /* Pour la section Madrid : on affiche 1 article par ligne en mobile */
     .madrid {
         display: flex;
         flex-wrap: wrap;
@@ -685,7 +664,6 @@ button:hover{
         width: 100%;
     }
 
-    /* Pour la section Pop, occuper toute la largeur */
     .pop {
         display: flex;
         flex-wrap: wrap;

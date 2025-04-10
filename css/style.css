@@ -145,6 +145,7 @@ section {
     border-bottom-right-radius: 10px;
 }
 
+
 .form .search-btn-mobile {
     display: none;
 }
@@ -183,10 +184,14 @@ section {
     gap: 30px;
 }
 
+.acc-madrid h2 , .acc-pop h2{
+    margin: 0;
+}
+
 .acc-madrid {
     background-color: #eaeaea;
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -196,11 +201,11 @@ section {
 .acc-pop {
     background-color: #eaeaea;
     border-radius: 15px;
-    padding: 30px;
+    padding: 40px;
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
 }
 
 /* Pour la section Madrid */
@@ -208,7 +213,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 }
 
 .madrid article {
@@ -343,14 +348,13 @@ section {
 .activitie {
     display: flex;
     flex-wrap: wrap; 
-    gap: 10px;  
-    padding: 0 10px;
+    gap: 30px;  
 }
 
 .activitie a {
     text-decoration: none;
     color: #000;
-    flex :0 0 calc(25% - 10px);
+    flex :0 0 calc(25% - 25px);
 }
 
 .activitie article {
@@ -531,7 +535,7 @@ button:hover {
 
 
     .activitie img {
-        height: 480px; 
+        height: 550px; 
     }
 
     footer {
@@ -650,7 +654,7 @@ button:hover {
 
     .acc-pop,
     .acc-madrid {
-        width: 100%;
+        width: 90%;
     }
 
     .pop {
@@ -707,7 +711,7 @@ button:hover {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         width: 100%;
-        height: 680px;
+        height: 500px;
         object-fit: cover;
     }
 
